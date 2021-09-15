@@ -1,2 +1,4 @@
 fit.rds
 .backup
+.RData
+.Rhistory
