@@ -1,5 +1,6 @@
 library(Metrics)
 library(caret)
+library(kernlab)
 library(lubridate)
 library(tidyverse)
 
@@ -38,9 +39,16 @@ if (file.exists(model_path)) {
   train_control <- trainControl(
     method='repeatedcv',
     number=10,
-    repeats=3,
+    repeats=5,
     verboseIter=TRUE
   )
+  sigma_svm <- median(
+    kernlab::sigest(
+      as.matrix(training %>% select(-price)),
+      scaled = TRUE
+    )
+  )
+  costs_svm <- c(0.25, 0.5, 1, 2, 4, 8, 16, 32)
 
   set.seed(42)
   fit <- train(
@@ -49,7 +57,8 @@ if (file.exists(model_path)) {
     method='svmRadial',
     trControl=train_control,
     preProcess=c('center', 'scale'),
-    tuneLength=10,
+    tuneGrid=expand.grid(sigma=sigma_svm, C=costs_svm),
+    tuneLength=10
   )
   
   saveRDS(fit, 'fit.rds')
