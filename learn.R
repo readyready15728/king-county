@@ -48,7 +48,7 @@ if (file.exists(model_path)) {
       scaled = TRUE
     )
   )
-  costs_svm <- c(0.25, 0.5, 1, 2, 4, 8, 16, 32)
+  costs_svm <- c(0.25, 0.5, 1, 2, 4, 8, 16)
 
   set.seed(42)
   fit <- train(
