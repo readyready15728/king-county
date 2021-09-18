@@ -48,7 +48,7 @@ if (file.exists(model_path)) {
       scaled = TRUE
     )
   )
-  costs_svm <- c(0.25, 0.5, 1, 2, 4, 8, 16)
+  costs_svm <- c(0.25, 0.5, 1, 2, 4, 8, 16, 32)
 
   set.seed(42)
   fit <- train(
@@ -64,6 +64,6 @@ if (file.exists(model_path)) {
   saveRDS(fit, 'fit.rds')
 }
 
-price_pred <- predict(fit, training)
-price_actual <- training$price
+price_pred <- predict(fit, testing)
+price_actual <- testing$price
 print(rmse(price_pred, price_actual))
