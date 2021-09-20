@@ -4,10 +4,11 @@
 Here is my stab at statistical regression regarding house sale prices within
 King County, WA. The independent variables concern such data as number of
 bathrooms and whether the property has a nice view and I used them to predict
-what price any given house in the data actually sold for. Of course there are
-very few perfect algorithms and here there is no exception. So how good did I
-do? Well, here's likely the best outcome on machine learning hub Kaggle, with
-over 700 up-boats:
+what price any given house in the data actually sold for, using a support
+vector machine (or SVM) library. Of course there are very few perfect
+algorithms and here there is no exception. So how good did I do? Well, here's
+likely the best outcome on machine learning hub Kaggle, with over 700
+up-boats:
 
 ![Likely the best outcome on the data](best-model-on-kaggle.png)
 
