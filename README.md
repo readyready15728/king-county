@@ -12,7 +12,7 @@ up-boats:
 
 ![Likely the best outcome on the data](best-model-on-kaggle.png)
 
-His best model had a RMSE of 151200.970 US dollars. If you run my code you
+His best model had a RMSE of 150177.258 US dollars. If you run my code you
 should get a RMSE of 166832.8 US dollars. I may not be the absolute best in
 the arena of machine learning but scoring only ~11% more than the true pros on
 the test set—remember, it's like golf: the lower, the better—isn't too awful
