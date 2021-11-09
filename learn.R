@@ -52,7 +52,7 @@ if (file.exists(model_path)) {
     tuneLength=10,
   )
   
-  saveRDS(fit, 'fit.rds')
+  saveRDS(fit, model_path)
 }
 
 price_pred <- predict(fit, training)
